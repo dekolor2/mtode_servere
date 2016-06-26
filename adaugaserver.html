@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>mtode - lista servere</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!--Momentan folosim css-ul de la Bootstrap. Ai putea face unul mai bun? Scrie-mi la stefan@mtode.com! -->
+    </head>
+    <body><br><br><br><br>
+        <div class="container">
+            <div class="jumbotron">
+               <h1>Adauga server</h1>
+               <form action="dinamic/process_adaugaserver.php" method="post">
+               <input name="forum" class="form-control" type="text" placeholder="Link forum"> <b style="color:red;">(cu tot cu http:// !)</b><br>
+               <input name="ip" class="form-control" type="text" placeholder="IP:PORT"><br>
+               <select name="game" class="form-control">
+                   <option value="csgo">
+                       Counter Strike: Global Offensive
+                   </option>
+                   <option value="cs16">
+                       Counter Strike 1.6
+                   </option>
+                   <option value="samp">
+                       GTA San Andreas Multiplayer
+                   </option>
+                   <option value="minecraft">
+                       Minecraft
+                   </option>
+               </select><br>
+               <center><input type="submit" class="btn btn-primary"></center>
+               </form>
+               <br>
+               <center><b style="color:red;">Dupa adaugarea in baza de date, serverul va aparea offline pana cand site-ul va incerca conectarea la server in mod automat (dureaza maxim 5 minute)</b></center>
+            </div>
+            <center><a href="index.html">Acasa</a></center>
+        </div>
+    </body>
+</html>

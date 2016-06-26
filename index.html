@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mtode - lista servere</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!--Momentan folosim css-ul de la Bootstrap. Ai putea face unul mai bun? Scrie-mi la stefan@mtode.com! -->
+    </head>
+    <body><br><br><br><br>
+        <div class="container">
+            <div class="jumbotron">
+                <center><h1>Lista servere jocuri</h1></center>
+                <hr>
+                <center><ul class="list-inline"><li><a id="csgo" href="#">Counter-Strike:Global Offensive</a></li> | <li><a id="cs16" href="#">CS 1.6</li> | <li><a id="samp" href="#">SA:MP</a></li> | <li><a id="minecraft" href="#">Minecraft</a></li></ul></center>
+                <div id="lista-servere">
+                    <center><img src="default.gif"></center>
+                </div>
+            </div>
+            <center><ul class="list-inline"><li><a href="adaugaserver.html">Adauga server</a></li> | <li><a id="refresh" href="#">Reimprospatare lista</a></li> | <li><a href="#">Raporteaza o problema</a></li></ul></center>
+        </div>
+        <script>
+            $(document).ready(function() {
+               $("#lista-servere").load("dinamic/load_servers.php"); 
+               $("#csgo").click(function() {
+                  $("#lista-servere").load("dinamic/load_servers.php?g=csgo");
+               });
+               $("#cs16").click(function() {
+                  $("#lista-servere").load("dinamic/load_servers.php?g=cs16");
+               });
+               $("#samp").click(function() {
+                  $("#lista-servere").load("dinamic/load_servers.php?g=samp");
+               });
+               $("#minecraft").click(function() {
+                  $("#lista-servere").load("dinamic/load_servers.php?g=minecraft");
+               });
+               $("#refresh").click(function() {
+                   $("#lista-servere").html("<center><img src='default.gif'></center>");
+                  $("#lista-servere").load("dinamic/load_servers.php");
+               });
+            });
+        </script>
+    </body>
+</html>
